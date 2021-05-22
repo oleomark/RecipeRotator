@@ -9,7 +9,12 @@
     <p>Cuisine: {{ recipe.cuisine }}</p>
     <p>Instructions: {{ recipe.instructions }}</p>
     <p>Serving Size: {{ recipe.servingsize }}</p>
+    <p>Calories: {{ recipe.calories }}</p>
     <p>Author: {{ recipe.author }}</p>
+  </div>
+  <div class="card-action">
+    <a href="{% url 'recipes_update' recipe.id %}">Edit</a>
+    <a href="{% url 'recipes_delete' recipe.id %}">Delete</a>
   </div>
 </div>
 
