@@ -2,6 +2,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: purple;
+    background-color: rgb(237, 237, 229);
   }
   
   main {
@@ -10,5 +12,197 @@ body {
   
   footer.page-footer {
     padding-top: 0;
-    text-align: right;
+    text-align: center;
+    color:rgb(45, 44, 44);
   }
+
+.nav-icon {
+  color: rgb(234, 233, 227) !important;
+  font-size: 50px !important;
+  margin-right: 15px;
+  margin-left: 23px;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count:inherit;
+  animation-timing-function:linear;
+}
+
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(180deg); }
+}
+
+.navbar-brand {
+  font-size: 42px;
+  color: #cec0ca !important;
+  font-family: 'Kaushan Script', cursive;
+}
+
+strong, .navbar-brand {
+  color:#cec0ca;
+  margin-left: 5px;
+}
+
+span {
+  font-size: 18px;
+  color: white !important;
+}
+
+.nav-link {
+  color: rgb(210, 210, 207) !important;
+}
+.navbar {
+  background-color: #753E5E !important;
+}
+
+.index-str {
+  color: #762755;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.index-title {
+  color: rgb(75, 74, 75);
+  margin-top: 45px;
+  text-align: center;
+  font-family: 'Trocchi', serif;
+}
+
+.index-card {
+  display: inline-flex;
+  margin-top: 20px;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  margin-left: 30px;
+  margin-top: 20px !important;
+  margin-bottom: 30px;
+}
+
+.index-textBlurb {
+  text-align: center;
+  color: rgb(58, 56, 56); 
+}
+
+.index-card-title {
+  color:#c6abbe;
+  font-family:  'Julius Sans One', sans-serif;
+  font-size: 24px;
+  background-color: rgb(36, 36, 36);
+  padding: 7px;
+  text-align: center;
+}
+
+.index-card {
+  background-color: #753E5E;
+  border: 2px solid rgba(18, 17, 18, 0.462);
+  color: rgb(40, 39, 39);
+}
+
+.index-card-li {
+  text-align: center;
+  font-size: 14px;
+  background-color: rgb(35, 33, 33) !important;
+}
+
+ .index-card-link {
+    border: 2px solid #2d2b2c;
+    color: white;
+    margin-left: 55px;
+ }
+
+ .index-card-link:hover {
+   color: white;
+   border: 2px solid #c6abbe;
+ }
+.edit-title {
+  color:rgb(70, 69, 69);
+  font-size: 45px;
+  font-family: 'Elsie', cursive;
+   margin-top: 50px;
+   text-align: center;
+   margin-bottom: 60px;
+}
+ .edit-colored-title {
+   color: #753e5e;
+   margin-left: 30px;
+ }
+.calorie-icon {
+  margin-top: 30px;
+  color:#753e5e !important;
+   font-size: 23px;
+   height: 50px;
+}
+ .food-name-icon {
+   color:#753e5e !important;
+   font-size: 23px;
+   height: 50px;
+ }
+ .author-name-icon {
+    margin-top: 30px;
+    color:#753e5e !important;
+   font-size: 23px;
+   height: 50px;
+ }
+.directions-icon  {
+  color:#753e5e !important;
+  min-height: 65px !important;
+  width: 50px !important;
+  font-size: 23px;
+}
+.serving-icon {
+  color:#753e5e !important;
+   font-size: 23px;
+   height: 60px;
+}
+ .food-name-input {
+   height: 50px !important;
+   max-width: 320px !important;
+     margin-right: 30px;
+     margin-bottom: 30px;
+ }
+.directions-input {
+  min-height: 90px !important;
+  max-width: 500px !important;
+  margin-right: 30px;
+}
+
+.serving-input{
+   height: 60px !important;
+   max-width: 140px !important;
+   margin-right: 30px;
+   margin-bottom: 30px;
+}
+.calorie-input  {
+  max-width: 230px !important;
+   height: 50px !important;
+   margin-top: 30px;
+   margin-right: 35px;
+}
+.author-name-input {
+  max-width: 320px !important;
+   height: 50px !important;
+   margin-top: 30px;
+}
+ .input-group {
+   margin-left: 15%;
+ }
+
+ .edit-btn {
+    border: 2px solid #763756;
+    color: rgb(50, 48, 50);
+    width: 210px;
+    margin-left: 35%;
+    margin-top: 30px;
+ }
+
+ .edit-btn:hover {
+   color: rgb(109, 42, 88);
+   border: 2px solid #2b2a2b;
+ }
+
+ .add-title {
+  color: rgb(93, 43, 75);
+  margin-top: 35px;
+  margin-bottom: 65px;
+  text-align: center;
+  font-family: 'Trocchi', serif;
+}
