@@ -13,6 +13,7 @@ body {
   footer.page-footer {
     padding-top: 0;
     text-align: center;
+    color:rgb(45, 44, 44);
   }
 
 .nav-icon {
@@ -67,7 +68,13 @@ span {
 }
 
 .index-card {
+  display: inline-flex;
+  margin-top: 20px;
+  /* flex-direction: row; */
+  flex-wrap: wrap;
+  margin-left: 30px;
   margin-top: 20px !important;
+  margin-bottom: 30px;
 }
 
 .index-textBlurb {
@@ -105,5 +112,4 @@ span {
  .index-card-link:hover {
    color: white;
    border: 2px solid #c6abbe;
-
  }
