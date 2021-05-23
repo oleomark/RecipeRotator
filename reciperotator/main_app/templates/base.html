@@ -18,8 +18,9 @@
           <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Recipe Rotator</a></li>
         </ul>
         <ul class="right">
-          <li><a href="/about">About</a></li>
-          <li><a href="/recipes">View All My Recipes</a></li>
+          <li><a href="{% url 'about' %}">About</a></li>
+          <li><a href="{% url 'recipes_create' %}">Add a Recipe</a></li>
+          <li><a href="{% url 'index' %}">View All My Recipes</a></li>
         </ul>
       </div>
     </nav>
