@@ -113,3 +113,96 @@ span {
    color: white;
    border: 2px solid #c6abbe;
  }
+.edit-title {
+  color:rgb(70, 69, 69);
+  font-size: 45px;
+  font-family: 'Elsie', cursive;
+   margin-top: 50px;
+   text-align: center;
+   margin-bottom: 60px;
+}
+ .edit-colored-title {
+   color: #753e5e;
+   margin-left: 30px;
+ }
+.calorie-icon {
+  margin-top: 30px;
+  color:#753e5e !important;
+   font-size: 23px;
+   height: 50px;
+}
+ .food-name-icon {
+   color:#753e5e !important;
+   font-size: 23px;
+   height: 50px;
+ }
+ .author-name-icon {
+    margin-top: 30px;
+    color:#753e5e !important;
+   font-size: 23px;
+   height: 50px;
+ }
+.directions-icon  {
+  color:#753e5e !important;
+  min-height: 65px !important;
+  width: 50px !important;
+  font-size: 23px;
+}
+.serving-icon {
+  color:#753e5e !important;
+   font-size: 23px;
+   height: 60px;
+}
+ .food-name-input {
+   height: 50px !important;
+   max-width: 320px !important;
+     margin-right: 30px;
+     margin-bottom: 30px;
+ }
+.directions-input {
+  min-height: 90px !important;
+  max-width: 500px !important;
+  margin-right: 30px;
+}
+
+.serving-input{
+   height: 60px !important;
+   max-width: 140px !important;
+   margin-right: 30px;
+   margin-bottom: 30px;
+}
+.calorie-input  {
+  max-width: 230px !important;
+   height: 50px !important;
+   margin-top: 30px;
+   margin-right: 35px;
+}
+.author-name-input {
+  max-width: 320px !important;
+   height: 50px !important;
+   margin-top: 30px;
+}
+ .input-group {
+   margin-left: 15%;
+ }
+
+ .edit-btn {
+    border: 2px solid #763756;
+    color: rgb(50, 48, 50);
+    width: 210px;
+    margin-left: 35%;
+    margin-top: 30px;
+ }
+
+ .edit-btn:hover {
+   color: rgb(109, 42, 88);
+   border: 2px solid #2b2a2b;
+ }
+
+ .add-title {
+  color: rgb(93, 43, 75);
+  margin-top: 35px;
+  margin-bottom: 65px;
+  text-align: center;
+  font-family: 'Trocchi', serif;
+}

@@ -2,15 +2,44 @@
 
 {% block content %}
   {% if object %}
-    <h1>Edit <span class="teal-text">{{object.name}}</span></h1>
+    <h1 class="edit-title">Modify<strong class="edit-colored-title">❝ {{object.name}} ❞</strong></h1>
   {% else %}
-    <h1>Add Recipe</h1>
+    <h1 class="add-title">Create a Recipe</h1>
   {% endif %}
   <form action="" method="POST">
     {% csrf_token %}
-    <table>
-      {{ form.as_table }}
-    </table>
-    <input type="submit" value="Submit!" class="btn">
+    <div class="input-group mb-3">
+      <span class="input-group-text material-icons food-name-icon" id="basic-addon1">local_dining</span>
+      <input type="text"class="form-control food-name-input" placeholder="Name of Recipe" aria-label="Name of Recipe"
+      aria-describedby="basic-addon1" {{form.name}}
+
+      <span class="input-group-text material-icons food-name-icon" id="basic-addon1">public</span>
+      <select type="text" class="form-control food-name-input" placeholder="Select Cuisine" aria-label="Select Cuisine"
+      aria-describedby="basic-addon1" {{form.cuisine}}
+        {% comment %} <option>Select Cuisine</option>
+        <option>North American</option>
+        <option>South American</option>
+        <option>Latin American</option>
+        <option>Asian</option>
+        <option>European</option>
+        <option>Mediterranean</option>
+        <option>African</option> {% endcomment %}
+  </div>
+   <div class="input-group mb-3">
+      <span class="input-group-text material-icons directions-icon">format_list_numbered</span>
+      <textarea class="form-control directions-input" name="instructions"  aria-label="Recipe Directions" placeholder="Enter Recipe Instructions Step by Step" {{form.instructions}}
+      <span class="input-group-text material-icons serving-icon" id="basic-addon1">people</span>
+      <input type="number" name="servingsize" class="form-control serving-input" placeholder="Serving Size" aria-label="Serving Size"
+      aria-describedby="basic-addon1" {{form.servingsize}}
+    </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text material-icons calorie-icon" id="basic-addon1">add_circle_outline</span>
+      <input type="text" name="calories" class="form-control calorie-input" placeholder="Total Calories (per serving)" aria-label="Total Calories (per serving)"
+      aria-describedby="basic-addon1" {{form.calories}}
+      <span class="input-group-text material-icons author-name-icon" id="basic-addon1">emoji_people</span>
+      <input type="text" name="author" class="form-control author-name-input" placeholder="Recipe Author" aria-label="Recipe Author"
+      aria-describedby="basic-addon1" {{form.author}}
+    </div>
+    <input type="submit" value="Submit!" class="btn edit-btn btn-outline-info">
   </form>
 {% endblock %}
