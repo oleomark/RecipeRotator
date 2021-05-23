@@ -6,7 +6,7 @@
 <p class="index-textBlurb">Check out your recently added recipes! Don't forget to add more recipes to your collection as you further develop your culinary skills.</p>
 {% for recipe in recipes %} 
 
-    <div class="card index-card" style="width: 15rem;">
+    <div class="card index-card" style="width: 17rem;">
         <img
             src="https://imgur.com/ephVgQ7.jpeg"
             class="card-img-top"
@@ -14,14 +14,14 @@
         />
 
         <div class="card-body">
-            <h2 class="card-title index-card-title animate__animated animate__zoomInDown">{{ recipe.name }}</h2>
+            <h2 class="card-title index-card-title animate__animated animate__zoomInDown">❝ {{ recipe.name }} ❞</h2>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Filed Under┋{{ recipe.cuisine }} Cuisine</li>
-            <li class="list-group-item">The Chef ┋{{ recipe.author }}</li>
+        <ul class="list-group list-group-flush index-card-li">
+            <li class="list-group-item">Filed Under • {{ recipe.cuisine }} Cuisine</li>
+            <li class="list-group-item">The Chef • {{ recipe.author }}</li>
         </ul>
         <div class="card-body">
-            <a href="{% url 'detail' recipe.id %}" class="card-link">Go to recipe</a>
+            <a href="{% url 'detail' recipe.id %}" class="btn btn-outline-info index-card-link">Go to recipe</a>
         </div>
     </div>
 {% endfor %} 
