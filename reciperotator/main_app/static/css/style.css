@@ -55,11 +55,22 @@ span {
 }
 
 .index-str {
-  color: #753E5E;
+  color: #762755;
+  font-family: 'Julius Sans One', sans-serif;
 }
 
 .index-title {
-  color: rgb(93, 91, 94);
+  color: rgb(75, 74, 75);
   margin-top: 25px;
   text-align: center;
+  font-family: 'Trocchi', serif;
+}
+
+.index-card {
+  margin-top: 20px !important;
+}
+
+.index-textBlurb {
+  text-align: center;
+  color: rgb(58, 56, 56);
 }
