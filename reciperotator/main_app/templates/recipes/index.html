@@ -2,10 +2,18 @@
 
 {% block content %} 
 
-<h1>Recipe List</h1>
+<h1 class="index-title">What's for <strong class="index-str">Dinner</strong> tonight?</h1>
 
 {% for recipe in recipes %} 
-    <div class="card">
+
+    
+
+
+
+
+
+
+    {% comment %} <div class="card">
         <a href="{% url 'detail' recipe.id %}">
         <div class="card-content">
             <span class="card-title">{{ recipe.name }}</span>
@@ -13,7 +21,7 @@
             <p>Author: {{ recipe.author }}</p>
         </div>
         </a>
-    </div>
+    </div> {% endcomment %}
 {% endfor %} 
 
 {% endblock %} 

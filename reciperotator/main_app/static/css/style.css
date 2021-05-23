@@ -2,6 +2,8 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: purple;
+    background-color: rgb(239, 239, 232);
   }
   
   main {
@@ -10,5 +12,54 @@ body {
   
   footer.page-footer {
     padding-top: 0;
-    text-align: right;
+    text-align: center;
   }
+
+.nav-icon {
+  color: rgb(210, 205, 164) !important;
+  font-size: 50px !important;
+  margin-right: 15px;
+  margin-left: 23px;
+  animation-name: rotate;
+  animation-duration: 10s;
+  animation-iteration-count:inherit;
+  animation-timing-function:linear;
+}
+
+@keyframes rotate{
+    from{ transform: rotate(-360deg); }
+    to{ transform: rotate(180deg); }
+}
+
+.navbar-brand {
+  font-size: 42px;
+  color: rgb(249, 248, 249) !important;
+  font-family: 'Kaushan Script', cursive;
+}
+
+strong, .navbar-brand {
+  color:rgb(249, 248, 249);
+  margin-left: 5px;
+}
+
+span {
+  font-size: 18px;
+  color: white !important;
+}
+
+.nav-link {
+  color: rgb(210, 210, 207) !important;
+}
+.navbar {
+  background-color: #753E5E !important;
+}
+
+.index-str {
+  color: #753E5E;
+}
+
+.index-title {
+  color: rgb(93, 91, 94);
+  margin-top: 25px;
+  text-align: center;
+}

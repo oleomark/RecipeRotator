@@ -7,29 +7,59 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Recipe Rotator</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Bootstrap -->
-  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-  <!-- Material Design for Bootstrap -->
-  <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+  <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    rel="stylesheet"
+  />
+  <!-- Google Fonts / Icons -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+  />
+  <link href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Kaushan+Script&display=swap" rel="stylesheet">
+  <link 
+  href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet"/>
+  <!-- MDB -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
   <header class="navbar-fixed">
-    <nav>
-      <div class="nav-wrapper">
-        <ul>
-          <li><a href="/" class="left brand-logo">&nbsp;&nbsp;Recipe Rotator</a></li>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <div class="container-fluid">
+       <h2 class="navbar-brand">
+       Recipe <span class="material-icons nav-icon">menu_book</span><strong>Rotator</strong></h2>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#navbarText"
+        aria-controls="navbarText"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <i class="fas fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'about' %}">Learn More</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'recipes_create' %}">Add Recipe</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'index' %}">All Recipes</a>
+           </li>
         </ul>
-        <ul class="right">
-          <li><a href="{% url 'about' %}">About</a></li>
-          <li><a href="{% url 'recipes_create' %}">Add a Recipe</a></li>
-          <li><a href="{% url 'index' %}">View All My Recipes</a></li>
-        </ul>
+        <span class="navbar-text">
+          Logged in as Anonymous
+        </span>
       </div>
-    </nav>
+    </div>
+  </nav>
   </header>
   <main class="container">
     {% block content %}
@@ -38,22 +68,9 @@
   <footer class="page-footer">
     <div class="right">All Rights Reserved, &copy; 2021 Recipe Rotator &nbsp;</div>
   </footer>
-  <!-- jQuery -->
-  <!-- jQuery -->
-  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
-
-  <!-- Popper.js -->
-  <script src="{% static 'js/popper.min.js' %}"></script>
-
-  <!-- Bootstrap -->
-  <script src="{% static 'js/bootstrap.min.js' %}"></script>
-
-  <!-- Material Design for Bootstrap -->
-  <script src="{% static 'js/mdb.min.js' %}">
-  
-  $(function () {
-  $("#mdb-lightbox-ui").load("{% static 'mdb-addons/mdb-lightbox-ui.html' %}");
-  });
-  </script>
+  <script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"
+></script>
 </body>
 </html>
