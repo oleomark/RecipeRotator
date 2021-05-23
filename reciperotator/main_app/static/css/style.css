@@ -16,7 +16,7 @@ body {
   }
 
 .nav-icon {
-  color: rgb(210, 205, 164) !important;
+  color: rgb(234, 233, 227) !important;
   font-size: 50px !important;
   margin-right: 15px;
   margin-left: 23px;
@@ -33,12 +33,12 @@ body {
 
 .navbar-brand {
   font-size: 42px;
-  color: rgb(249, 248, 249) !important;
+  color: #cec0ca !important;
   font-family: 'Kaushan Script', cursive;
 }
 
 strong, .navbar-brand {
-  color:rgb(249, 248, 249);
+  color:#cec0ca;
   margin-left: 5px;
 }
 
@@ -61,7 +61,7 @@ span {
 
 .index-title {
   color: rgb(75, 74, 75);
-  margin-top: 25px;
+  margin-top: 45px;
   text-align: center;
   font-family: 'Trocchi', serif;
 }
@@ -73,4 +73,11 @@ span {
 .index-textBlurb {
   text-align: center;
   color: rgb(58, 56, 56); 
+}
+
+.index-card-title {
+  color:#c6abbe;
+  font-family:  'Julius Sans One', sans-serif;
+  background-color: rgb(47, 45, 45);
+  padding: 5px;
 }
