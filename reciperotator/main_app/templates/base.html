@@ -70,12 +70,15 @@
           </li>
           {% else %} 
           <li class="nav-item">
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="{% url 'login' %}">Log In</a>
           </li>
           {% endif %} 
         </ul>
         <span class="navbar-text">
-          Logged in as Anonymous
+          Logged in as {{recipe.user}}
         </span>
       </div>
     </div>
