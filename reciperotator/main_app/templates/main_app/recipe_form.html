@@ -8,7 +8,7 @@
   {% endif %}
   <form action="" method="POST">
     {% csrf_token %}
-    <div class="input-group mb-3">
+    <!-- <div class="input-group mb-3">
       <span class="input-group-text material-icons food-name-icon" id="basic-addon1">local_dining</span>
       <input type="text"class="form-control food-name-input" placeholder="Name of Recipe" aria-label="Name of Recipe"
       aria-describedby="basic-addon1" {{form.name}}
@@ -40,6 +40,17 @@
       <input type="text" name="author" class="form-control author-name-input" placeholder="Recipe Author" aria-label="Recipe Author"
       aria-describedby="basic-addon1" {{form.author}}
     </div>
+    <div class="input-group mb-3">
+      <span class="input-group-text material-icons ingredient-name-icon" id="basic-addon1">local_dining</span>
+      <input type="text"class="form-control ingredient-name-input" placeholder="Name of Ingredient" aria-label="Name of Ingredient"
+      aria-describedby="basic-addon1" {{form.ingredient_name}}
+      <span class=“input-group-text material-icons amount-icon” id=“basic-addon1">add_circle_outline</span>
+      <input type=“text” name=“amount” class=“form-control amount-input” placeholder=“Total Ingredients” aria-label=“Total Ingredients”
+      aria-describedby=“basic-addon1" {{form.amount}}
+    </div> -->
+    <table>
+      {{ form.as_table }}
+    </table>
     <input type="submit" value="Submit!" class="btn edit-btn btn-outline-info">
   </form>
 {% endblock %}

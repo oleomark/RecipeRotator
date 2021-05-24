@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 
 CUISINES = (('NA', 'North American'), ('SA','South American'), ('LA', 'Latin American'), ('AS', 'Asian'), ('EU', 'European'), ('MD', 'Mediterranean'), ('AF', 'African'))
@@ -27,6 +28,7 @@ class Recipe(models.Model):
     calories = models.IntegerField()
     author = models.CharField(max_length=100)
     ingredients = models.ManyToManyField(Ingredient)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self): 
         return self.name

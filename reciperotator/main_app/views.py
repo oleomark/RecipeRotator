@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView, DetailView
+from django.contrib.auth import login
 from .models import Recipe, Ingredient
 from .forms import RecipeLogForm
 
@@ -8,7 +9,11 @@ from .forms import RecipeLogForm
 class RecipeCreate(CreateView):
     model = Recipe
     fields = '__all__'
-    success_url = '/recipes/'
+    # fields = ['name', 'cuisine', 'instructions', 'servingsize', 'calories', 'author', 'ingredients']
+    # success_url = '/recipes/'
+    def form_valid(self, form):
+      form.instance.user = self.request.user  
+      return super().form_valid(form)
 
 class RecipeUpdate(UpdateView):
   model = Recipe
