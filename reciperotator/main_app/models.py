@@ -8,11 +8,12 @@ CUISINES = (('NA', 'North American'), ('SA','South American'), ('LA', 'Latin Ame
 
 RATINGS = (("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"))
 class Ingredient(models.Model):
-    name = models.CharField(max_length=50)
+    ingred_name = models.CharField(max_length=50)
     amount = models.CharField(max_length=50)
+    measurement = models.CharField(max_length=20, default="oz")
 
     def __str__(self):
-        return self.name
+        return self.ingred_name
 
     def get_absolute_url(self):
         return reverse('ingredients_detail', kwargs={'pk': self.id})    

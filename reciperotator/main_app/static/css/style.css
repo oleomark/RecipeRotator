@@ -45,7 +45,7 @@ strong, .navbar-brand {
 
 span {
   font-size: 18px;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .nav-link {
@@ -206,3 +206,7 @@ span {
   text-align: center;
   font-family: 'Trocchi', serif;
 }
+
+/* .card-title {
+  color:#2d2b2c;
+} */

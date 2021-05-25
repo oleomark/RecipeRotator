@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Recipe Details</h1>
+<h1 class="add-title">Recipe Details</h1>
 
 <div class="card">
   <div class="card-content">
@@ -20,7 +20,7 @@
 <div class="col s6">
   <form action="{% url 'add_recipelog' recipe.id %}" method="post">
     {% csrf_token %}
-    {{ recipelog_form.as_p }}
+    {{ recipelog_form.as_table }}
     <input type="submit" class="btn" value="Add Recipe Log">
   </form>
     <table class="striped">
@@ -45,17 +45,20 @@
 <hr>
 <div class="row">
   <div class="col s6">
-    <h3>Ingredients for {{ recipe.name }} </h3>
+    {% comment %} <h3>Shopping List {{ recipe.name }} </h3>
+     {% endcomment %}
+     <h3>Shopping List </h3>
+     <p>The recipe calls for..</p>
     {% if recipe.ingredients.count %}
       {% for ingredient in recipe.ingredients.all %}
         <div class="card">
           <div class="card-content">
             <span class="card-title">
-              {{ ingredient.name }}
+              <strong>{{ingredient.amount}}{{ingredient.measurement}} </strong> {{ ingredient.ingred_name }}
             </span>
-            <span class="card-title">
+            {% comment %} <span class="card-title">
               {{ ingredient.amount }}
-            </span>
+            </span> {% endcomment %}
           </div>
         </div>
       {% endfor %}
@@ -64,25 +67,31 @@
     {% endif %}
   </div>
   <div class="col s6">
-    <h3>Ingredients Currently Available</h3>
+    <h3>Recent Ingredients</h3>
     {% if ingredients.count %}
       {% for ingredient in ingredients.all %}
-        <div class="card">
+        {% comment %} <div class="card">
           <div class="card-content">
             <span class="card-title">
               {{ ingredient.name }}
             </span>
           </div>
-          <div class="card-action">
+          <div class="card-action"> {% endcomment %}
+          <div class="pmd-chip pmd-chip-secondary">
+              <i class="material-icons md-light pmd-sm">mood</i>
+             {{ ingredient.ingred_name }}
             <form action="{% url 'assoc_ingredient' recipe.id ingredient.id %}" method="post">
               {% csrf_token %}
-              <button type="submit" class="btn">Add</button>
+              {% comment %} <button type="submit" class="btn">Add</button> {% endcomment %}
+              <button class="pmd-chip-action ingredient-chip" type="submit"><i class="material-icons">+</i></a>
             </form>
           </div>
-        </div>
+          {% comment %} </div>
+        </div> {% endcomment %}
       {% endfor %}
     {% else %}
-      <h5>{{recipe.name}} has all current ingredients available</h5>
+      {% comment %} <h5>{{recipe.name}} has all current ingredients available</h5> {% endcomment %}
+      <span>You haven't used anything in awhile! Please add more ingredients to proceed.</span>
     {% endif %}
   </div>  
 </div>
@@ -96,5 +105,4 @@
     autoClose: true
   });
 </script>
-
 {% endblock %}
