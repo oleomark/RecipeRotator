@@ -17,13 +17,7 @@
       <select type="text" class="form-control food-name-input" placeholder="Select Cuisine" aria-label="Select Cuisine"
       aria-describedby="basic-addon1" {{form.cuisine}}
         {% comment %} <option>Select Cuisine</option>
-        <option>North American</option>
-        <option>South American</option>
-        <option>Latin American</option>
-        <option>Asian</option>
-        <option>European</option>
-        <option>Mediterranean</option>
-        <option>African</option> {% endcomment %}
+        <option>{{form.cuisine}}</option> {% endcomment %}
   </div>
    <div class="input-group mb-3">
       <span class="input-group-text material-icons directions-icon">format_list_numbered</span>
@@ -40,6 +34,21 @@
       <input type="text" name="author" class="form-control author-name-input" placeholder="Recipe Author" aria-label="Recipe Author"
       aria-describedby="basic-addon1" {{form.author}}
     </div>
+    <div class="input-group mb-3">
+      <select type="text" class="form-control food-name-input" placeholder="Select Ingredients" aria-label="Select Ingredients"
+        aria-describedby="basic-addon1" {{form.ingredients}}
+          {% comment %} <option>Select Ingredients</option>
+          <option>{{form.ingredients}}</option> {% endcomment %}
+      </div>
+    <div class="input-group mb-3">
+    <select type="text" class="form-control food-name-input" placeholder="Select User" aria-label="Select User"
+      aria-describedby="basic-addon1" {{form.user}}
+        {% comment %} <option>Select User</option>
+        <option>{{form.user}}</option> {% endcomment %}
+    </div>
+    <!-- <table>
+      {{ form.as_table }}
+    </table> -->
     <input type="submit" value="Submit!" class="btn edit-btn btn-outline-info">
   </form>
 {% endblock %}
