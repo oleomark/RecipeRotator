@@ -40,7 +40,7 @@ class Recipe(models.Model):
 class RecipeLog(models.Model):
     recipe_use = models.BooleanField(default=True)
     date = models.DateField('Log Date')
-    name = models.CharField(max_length=50)
+    review_name = models.CharField(max_length=50)
     review = models.TextField(max_length=500)
     rating = models.CharField(
         max_length=5,

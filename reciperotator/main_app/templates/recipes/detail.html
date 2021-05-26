@@ -86,11 +86,20 @@
   </div>
 </div>
 <div class="col s6">
+<h3 class="details-sub">How did the recipe turn out?</h3>
   <form action="{% url 'add_recipelog' recipe.id %}" method="post">
     {% csrf_token %}
-    {{ recipelog_form.as_p }}
-    <input type="submit" class="btn" value="Add Recipe Log">
+  <div class="input-group mb-3">
+      <span class="input-group-text material-icons serving-icon" id="basic-addon1">people</span>
+      <input type="text" name="review_name" class="form-control food-name-input" placeholder="Enter Name" aria-label="Enter Name"
+      aria-describedby="basic-addon1" {{form.review_name}}>
+      <span class="input-group-text material-icons directions-icon">format_list_numbered</span>
+      <textarea class="form-control directions-input" name="instructions"  aria-label="Review the Recipe"
+       placeholder="The recipe review goes right here. Remember, practice makes perfect! Provide feedback for yourself." {{form.review}}></textarea>
+    <input type="submit" class="btn" value="Submit Review">
+    </div>
   </form>
+  </div>
     <table class="striped">
       <thead>
         <tr><th>Date</th><th>Made Before?</th><th>Name</th><th>Review</th><th>Rating</th></tr>
