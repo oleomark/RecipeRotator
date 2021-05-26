@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="add-title">Recipe Details</h1>
+<h1>Recipe Details</h1>
 
 <div class="card">
   <div class="card-content">
@@ -20,7 +20,7 @@
 <div class="col s6">
   <form action="{% url 'add_recipelog' recipe.id %}" method="post">
     {% csrf_token %}
-    {{ recipelog_form.as_table }}
+    {{ recipelog_form.as_p }}
     <input type="submit" class="btn" value="Add Recipe Log">
   </form>
     <table class="striped">
@@ -44,54 +44,53 @@
 
 <hr>
 <div class="row">
-  <div class="col s6">
-    {% comment %} <h3>Shopping List {{ recipe.name }} </h3>
-     {% endcomment %}
-     <h3>Shopping List </h3>
-     <p>The recipe calls for..</p>
+<h3 class="details-sub">Shopping List</h3>
+<p class="details-body">The recipe calls for...</p>
+  <div class="col s6 recent-ingred-card">
     {% if recipe.ingredients.count %}
       {% for ingredient in recipe.ingredients.all %}
-        <div class="card">
+        <div class="card" style="width: 16rem;">
           <div class="card-content">
-            <span class="card-title">
-              <strong>{{ingredient.amount}}{{ingredient.measurement}} </strong> {{ ingredient.ingred_name }}
-            </span>
-            {% comment %} <span class="card-title">
-              {{ ingredient.amount }}
-            </span> {% endcomment %}
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item ingred-list"> <strong class="ingredient-att">{{ ingredient.amount }}{{ingredient.measurement}}
+               </strong> of {{ingredient.ingred_name}}</li>
+            </ul>
           </div>
         </div>
       {% endfor %}
     {% else %}
-      <h5>No ingredients Listed</h5>
+      <h5>No ingredients have been added.</h5>
     {% endif %}
   </div>
+  <div class="row">
+    <h3 class="details-sub">Recent Ingredients</h3>
   <div class="col s6">
-    <h3>Recent Ingredients</h3>
     {% if ingredients.count %}
       {% for ingredient in ingredients.all %}
-        {% comment %} <div class="card">
-          <div class="card-content">
-            <span class="card-title">
-              {{ ingredient.name }}
-            </span>
-          </div>
-          <div class="card-action"> {% endcomment %}
-          <div class="pmd-chip pmd-chip-secondary">
-              <i class="material-icons md-light pmd-sm">mood</i>
-             {{ ingredient.ingred_name }}
-            <form action="{% url 'assoc_ingredient' recipe.id ingredient.id %}" method="post">
+     <form action="{% url 'assoc_ingredient' recipe.id ingredient.id %}" method="post">
+        {% comment %} <div class="card" style="width: 11rem;">
+          <div class="card-content chips">
+            <ul class="list-group list-group-flush">
               {% csrf_token %}
-              {% comment %} <button type="submit" class="btn">Add</button> {% endcomment %}
-              <button class="pmd-chip-action ingredient-chip" type="submit"><i class="material-icons">+</i></a>
-            </form>
+                <li class="list-group-item chip-ingred"><button type="submit" class="chip-btn"><strong class="ingredient-att">{{ ingredient.ingred_name }}
+                </strong>
+              +</button>
+              </li>
+            </ul>
           </div>
-          {% comment %} </div>
         </div> {% endcomment %}
-      {% endfor %}
+      <div class="chip ml-0 mr-0 chip-custom">
+          {% csrf_token %}
+          <span><strong class="ingredient-att">{{ ingredient.ingred_name }}</strong></span>
+                <button type="submit" class="chip-btn">
+              + </button>
+      </div>
+      </form>
+    </div>
+    </div>
+    {% endfor %}
     {% else %}
-      {% comment %} <h5>{{recipe.name}} has all current ingredients available</h5> {% endcomment %}
-      <span>You haven't used anything in awhile! Please add more ingredients to proceed.</span>
+      <p class="details-body">No recent ingredients available. Please add more ingredients!</p>
     {% endif %}
   </div>  
 </div>
