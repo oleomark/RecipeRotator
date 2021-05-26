@@ -9,8 +9,28 @@
   
   <form action="" method="post">
     {% csrf_token %}
+    <div class="input-group mb-3">
+        <span class="input-group-text material-icons food-name-icon" id="basic-addon1">local_dining</span>
+        <input type="text"class="form-control food-name-input" placeholder="Ingredient Name" aria-label="Ingredient Name"
+      aria-describedby="basic-addon1" {{form.ingred_name}}
+
+        <span class="input-group-text material-icons food-name-icon" id="basic-addon1">public</span>
+        <input type="text" class="form-control food-name-input" placeholder="Enter #" aria-label="Enter Quantity"
+      aria-describedby="basic-addon1" {{form.amount}}
+
+        <span class="input-group-text material-icons serving-icon" id="basic-addon1">people</span>
+        <select name="measurement" class="form-control serving-input" placeholder="Enter Measurement Type" aria-label="Enter Measurement Type"
+      aria-describedby="basic-addon1" {{form.measurement}}
+          <option>Select Measurement</option>
+          <option>Cup(s)</option>
+          <option>oz</option>
+          <option>Pound</option>
+          <option>tbsp</option>
+          <option>tsp</option>
+    </div>
+
     <table>
-      {{ form.as_table }}
+      {% comment %} {{ form.as_table}} {% endcomment %}
     </table>
     <input type="submit" value="Submit!" class="btn">
   </form>

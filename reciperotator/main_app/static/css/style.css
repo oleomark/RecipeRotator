@@ -3,7 +3,9 @@ body {
     min-height: 100vh;
     flex-direction: column;
     color: purple;
-    background-color: rgb(237, 237, 229);
+    /* background-color: rgb(237, 237, 229); */
+    /* display: flexbox;
+    flex-direction: row-reverse; */
   }
   
   main {
@@ -11,9 +13,10 @@ body {
   }
   
   footer.page-footer {
-    padding-top: 0;
+    padding-top: 40px;
     text-align: center;
     color:rgb(45, 44, 44);
+  
   }
 
 .nav-icon {
@@ -45,7 +48,7 @@ strong, .navbar-brand {
 
 span {
   font-size: 18px;
-  color: white !important;
+  /* color: white !important; */
 }
 
 .nav-link {
@@ -205,4 +208,82 @@ span {
   margin-bottom: 65px;
   text-align: center;
   font-family: 'Trocchi', serif;
+}
+/* .card {
+background-color: #753E5E;
+margin-top: 5px;
+border: 2px solid rgb(52, 50, 51);
+color: rgb(183, 180, 182);
+} */
+ .ingredient-att {
+  color: #b0a6ae;
+  text-align: left;
+  /* margin-right: 10px; */
+}
+.details-sub {
+  font-size: 34px;
+   color: #753e5e;
+   font-family:  'Julius Sans One', sans-serif;
+   text-align: center;
+}
+.details-body {
+  font-size: 16px;
+  color:rgb(40, 39, 39);
+  text-align: center;
+}
+
+.recent-ingred-card {
+   display: flex;
+   flex-direction: row-reverse;
+  flex-wrap: wrap;
+  /* display: inline; */
+  /* margin-left: 30px; */
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+.ingred-list {
+background: #343332;
+border: 3px solid#cec0ca !important;
+color: white;
+margin-right: 20px; 
+margin-top: 10px;
+/* width: 150px; */
+/* /* margin-top: 20px; */
+/* display: block; */
+}
+.ingredient-chip {
+  color: #baaeb7;
+  border: 3px solid#cec0ca !important;
+  border-radius: 30px;
+ padding: 5px 7px 7px 5px;
+ font-size: 14px;
+ text-align: center;
+ background: rgb(52, 50, 51);
+}
+
+.chip-btn {
+  background-color:rgb(52, 50, 51);
+  color: rgb(249, 242, 246);
+  text-decoration: none !important;
+  font-size: 15px;
+}
+.chip-btn, input[type="submit"], input[type="reset"] {
+	background: none;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+}
+
+.chip-custom {
+  background: rgb(52, 50, 51);
+  width: 110px;
+  padding-right: 15px;
+  border-radius: 30px;
+  margin-left: 20%;
+  /* display: inline-block;
+  flex-direction: row-reverse;
+  flex-wrap: wrap; */
+  margin-top: 20px;
+  margin-right: 20px;
+
 }
