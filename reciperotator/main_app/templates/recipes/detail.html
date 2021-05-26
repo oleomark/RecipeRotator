@@ -1,3 +1,4 @@
+
 {% extends 'base.html' %}
 {% block content %}
 
@@ -93,11 +94,17 @@
       <span class="input-group-text material-icons serving-icon" id="basic-addon1">people</span>
       <input type="text" name="review_name" class="form-control food-name-input" placeholder="Enter Name" aria-label="Enter Name"
       aria-describedby="basic-addon1" {{form.review_name}}>
+    
+       <span class="input-group-text material-icons serving-icon" id="basic-addon1">people</span>
+      <input type="date" class="form-control datetimepicker" placeholder="Select Date" aria-label="Select Date"
+      aria-describedby="basic-addon1" style="color: #753E5E; border: 2px initial rgb(50, 48, 50)" {{form.date}}>
+    </div>
+    <div class="input-group mb-3">
       <span class="input-group-text material-icons directions-icon">format_list_numbered</span>
       <textarea class="form-control directions-input" name="instructions"  aria-label="Review the Recipe"
        placeholder="The recipe review goes right here. Remember, practice makes perfect! Provide feedback for yourself." {{form.review}}></textarea>
     <input type="submit" class="btn" value="Submit Review">
-    </div>
+  </div>
   </form>
   </div>
     <table class="striped">
@@ -173,12 +180,25 @@
 </div>
 
 <script>
-  const dateEl = document.getElementById('id_date');
+  {% comment %} const dateEl = document.getElementById('id_date');
   M.Datepicker.init(dateEl, {
     format: 'yyyy-mm-dd',
     defaultDate: new Date(),
     setDefaultDate: true,
     autoClose: true
-  });
+  }); {% endcomment %}
+  $('.datetimepicker').datetimepicker({
+    icons: {
+        time: "fa fa-clock-o",
+        date: "fa fa-calendar",
+        up: "fa fa-chevron-up",
+        down: "fa fa-chevron-down",
+        previous: 'fa fa-chevron-left',
+        next: 'fa fa-chevron-right',
+        today: 'fa fa-screenshot',
+        clear: 'fa fa-trash',
+        close: 'fa fa-remove'
+    }
+});
 </script>
 {% endblock %}
