@@ -7,11 +7,15 @@
 {% for recipe in recipes %} 
 
     <div class="card index-card" style="width: 17rem;">
+        {% for photo in recipe.photo_set.all %} 
+            <img src="{{ photo.url }}">
+        {% empty %} 
         <img
-            src="https://imgur.com/ephVgQ7.jpeg"
-            class="card-img-top"
-            alt="..."
-        />
+        src="https://imgur.com/ephVgQ7.jpeg"
+        class="card-img-top"
+        alt="..."
+    />
+        {% endfor %} 
 
         <div class="card-body">
             <h2 class="card-title index-card-title animate__animated animate__zoomInDown">❝ {{ recipe.name }} ❞</h2>
