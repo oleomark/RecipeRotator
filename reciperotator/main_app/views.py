@@ -6,8 +6,13 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-from .models import Recipe, Ingredient
+import uuid
+import boto3
+from .models import Recipe, Ingredient, Photo
 from .forms import RecipeLogForm
+
+S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
+BUCKET = 'recipe-rotator'
 
 # Create your views here.
 class RecipeCreate(LoginRequiredMixin, CreateView):
@@ -69,6 +74,20 @@ def assoc_ingredient(request, recipe_id, ingredient_id):
 def unassoc_ingredient(request, recipe_id, ingredient_id):
     Recipe.objects.get(id=recipe_id).ingredients.remove(ingredient_id)
     return redirect('detail', recipe_id=recipe_id)
+
+@login_required
+def add_photo(request, recipe_id): 
+  photo_file = request.FILES.get('photo-file', None)
+  if photo_file:
+    s3 = boto3.client('s3')
+    key = uuid.uuid4().hex[:6] + photo_file.name[photo_file.name.rfind('.'):]
+    try:
+      s3.upload_fileobj(photo_file, BUCKET, key)
+      url = f"{S3_BASE_URL}{BUCKET}/{key}"
+      Photo.objects.create(url=url, recipe_id=recipe_id)
+    except: 
+      print('An error occurred uploading file to S3')
+  return redirect('detail', recipe_id=recipe_id)
 
 def signup(request):
   error_message = ''
