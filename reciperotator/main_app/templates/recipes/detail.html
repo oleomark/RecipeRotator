@@ -1,17 +1,85 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Recipe Details</h1>
+<h1 class="index-title">Featuring</h1>
 
-<div class="card">
-  <div class="card-content">
-    <span class="card-title">{{ recipe.name }}</span>
-    <p>Cuisine: {{ recipe.cuisine }}</p>
-    <p>Instructions: {{ recipe.instructions }}</p>
-    <p>Serving Size: {{ recipe.servingsize }}</p>
-    <p>Calories: {{ recipe.calories }}</p>
-    <p>Author: {{ recipe.author }}</p>
+<div class="accordion" id="accordionExample">
+  <div class="accordion-item">
+  <h1 class="add-title">{{ recipe.name }}</h1>
+  <h2 class="accordion-header" id="headingOne">
+     <button
+        class="accordion-button"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapseOne"
+        aria-expanded="true"
+        aria-controls="collapseOne"
+      >Follow the recipe step by step
+      </button>
+      </h2>
+      <div
+      id="collapseOne"
+      class="accordion-collapse collapse show"
+      aria-labelledby="headingOne"
+      data-mdb-parent="#accordionExample"
+    >
+    <div class="accordion-body">
+        {{recipe.instructions}}
+    </div>
   </div>
+</div>
+<div class="accordion-item">
+    <h2 class="accordion-header" id="headingTwo">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapseTwo"
+        aria-expanded="false"
+        aria-controls="collapseTwo"
+      >
+        Cuisine Classification
+      </button>
+    </h2>
+    <div
+      id="collapseTwo"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingTwo"
+      data-mdb-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        {{recipe.cuisine}}
+      </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header" id="headingThree">
+      <button
+        class="accordion-button collapsed"
+        type="button"
+        data-mdb-toggle="collapse"
+        data-mdb-target="#collapseThree"
+        aria-expanded="false"
+        aria-controls="collapseThree"
+      >
+        Nutritional Information
+      </button>
+    </h2>
+    <div
+      id="collapseThree"
+      class="accordion-collapse collapse"
+      aria-labelledby="headingThree"
+      data-mdb-parent="#accordionExample"
+    >
+      <div class="accordion-body">
+        Estimated Serving Size: {{recipe.servingsize}}
+        <br>
+        Total Calories: {{recipe.calories}}
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="card-action">
     <a href="{% url 'recipes_update' recipe.id %}">Edit</a>
     <a href="{% url 'recipes_delete' recipe.id %}">Delete</a>
