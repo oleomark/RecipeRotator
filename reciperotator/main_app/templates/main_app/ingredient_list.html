@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="add-title">Recent Ingredients</h1>
+<h1 class="add-title">Recently Ingredients</h1>
 
 {% for ingredient in ingredient_list %}
   <a href="{% url 'ingredients_detail' ingredient.id %}">
