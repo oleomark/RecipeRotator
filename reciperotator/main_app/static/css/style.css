@@ -293,5 +293,30 @@ display: inline;
 }
 
 .collapse-text {
-  color:#d2ced1;
+  color:#ae9ba9;
+}
+.changes-box {
+  background-color:#765769;
+  width: 175px;
+  padding: 10px;
+  text-align:center;
+  border-radius: 15px;
+  border: 4px solid #393838;
+}
+
+.change-box-tit {
+  font-family: 'Kaushan Script', cursive;
+  color: rgb(223, 214, 223);
+}
+
+.edit-link, .delete-link  {
+  font-size: 20px;
+  color: rgb(53, 52, 52);
+}
+
+.edit-link:hover {
+  color: white;
+}
+.delete-link:hover {
+  color: rgb(150, 27, 27);
 }
