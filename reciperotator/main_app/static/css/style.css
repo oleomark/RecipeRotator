@@ -2,7 +2,6 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    color: rgb(86, 38, 75);
     /* background-color: rgb(237, 237, 229); */
     /* display: flexbox;
     flex-direction: row-reverse; */
@@ -319,4 +318,55 @@ display: inline;
 }
 .delete-link:hover {
   color: rgb(150, 27, 27);
+}
+.review-form {
+  margin-top: 50px;
+  margin-left: 26%;
+}
+.review-name-input, .date-input{
+  width: 210px !important;
+  height: 50px;
+  color:#753e5e !important;
+  margin-right: 30px;
+  margin-bottom: 10px;
+  
+}
+.date-input {
+  margin-right: 30px;
+}
+.review-name-icon {
+  height: 50px;
+  color:#753e5e !important;
+  font-size: 23px;
+}
+.checkbox-label {
+  color: black;
+}
+.checkbox{
+    margin-left: 28%;
+    margin-bottom: 20px;
+    color: black !important;
+}
+.review-input {
+  width: 280px;
+  min-height: 100px;
+  margin-right: 30px;
+}
+
+
+.review-form, option {
+  color: white;
+}
+.review-table-sub {
+  color:rgb(101, 41, 79);
+  text-align: center;
+}
+
+.review-table-body {
+  color:rgb(40, 39, 39);
+  margin-left: 50px;
+}
+
+.review-btn {
+  color: red;
 }
