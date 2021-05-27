@@ -1,4 +1,5 @@
 from django.db import models
+from django import forms
 from django.urls import reverse
 from django.contrib.auth.models import User
 
@@ -6,7 +7,7 @@ from django.contrib.auth.models import User
 CUISINES = (('NA', 'North American'), ('SA','South American'), ('LA', 'Latin American'), ('AS', 'Asian'), ('EU', 'European'), ('MD', 'Mediterranean'), ('AF', 'African'))
 # Create your models here.
 
-RATINGS = (("1", "1"),("2", "2"),("3", "3"),("4", "4"),("5", "5"))
+RATINGS = (('One Star', '★'),('Two Star', '★★'),('Three Star', '★★★'),('Four Star', '★★★★'),('Five Star', '★★★★★'))
 class Ingredient(models.Model):
     ingred_name = models.CharField(max_length=50)
     amount = models.CharField(max_length=50)
@@ -43,7 +44,7 @@ class RecipeLog(models.Model):
     review_name = models.CharField(max_length=50)
     review = models.TextField(max_length=500)
     rating = models.CharField(
-        max_length=5,
+        max_length=20,
         choices = RATINGS,
         default = RATINGS[0][0]
     )

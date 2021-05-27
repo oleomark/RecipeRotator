@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% block content %}
 
@@ -127,26 +126,39 @@
   </div>  
   <hr>
   <div class="col s6">
-<h3 class="details-sub">How did the recipe turn out?</h3>
+  <h3 class="details-sub">How did the recipe turn out?</h3>
   <form action="{% url 'add_recipelog' recipe.id %}" method="post">
     {% csrf_token %}
-  <div class="input-group mb-3">
-      <span class="input-group-text material-icons serving-icon" id="basic-addon1">people</span>
-      <input type="text" name="review_name" class="form-control food-name-input" placeholder="Enter Name" aria-label="Enter Name"
-      aria-describedby="basic-addon1" {{form.review_name}}>
+    <div class="input-group mb-3 review-form">
+      <span class="input-group-text material-icons review-name-icon" id="basic-addon1">people</span>
+      <input type="text" style="width: 120px;" name="review_name" class="review-name-input" placeholder="Enter Name" aria-label="Enter Name"
+      aria-describedby="basic-addon1" {{recipelog_form.review_name}}
     
-       <span class="input-group-text material-icons serving-icon" id="basic-addon1">people</span>
-      <input type="date" class="form-control datetimepicker" placeholder="Select Date" aria-label="Select Date"
-      aria-describedby="basic-addon1" style="color: #753E5E; border: 2px initial rgb(50, 48, 50)" {{form.date}}>
+      <span class="input-group-text material-icons review-name-icon" id="basic-addon1">people</span>
+      <input type="date" class="date-input" placeholder="Select Date" aria-label="Select Date"
+      aria-describedby="basic-addon1" style="color: #753E5E; border: 2px initial rgb(50, 48, 50)" {{recipelog_form.date}}
     </div>
-    <div class="input-group mb-3">
+    <div class="input-group mb-3 review-form">
       <span class="input-group-text material-icons directions-icon">format_list_numbered</span>
-      <textarea class="form-control directions-input" name="instructions"  aria-label="Review the Recipe"
-       placeholder="The recipe review goes right here. Remember, practice makes perfect! Provide feedback for yourself." {{form.review}}></textarea>
-    <input type="submit" class="btn" value="Submit Review">
+      <textarea class=" review-input" name="review"  aria-label="Review the Recipe"
+       placeholder="The recipe review goes right here. Remember, practice makes perfect! Provide feedback for yourself." {{recipelogform.review}}></textarea>
+    
+      <select type="text" {{recipelog_form.rating}}
+    </div>
+    <div class="form-check checkbox review-form">
+    <input
+      class="form-check-input checkbox"
+      type="checkbox"
+      value=""
+      id="flexCheckDefault"
+        {{recipelog_form.recipe_use}}
+      <label class="form-check-label" for="flexCheckDefault">
+          I have made this recipe.
+      </label> 
+    <button type="submit" class="btn review-btn" value="Submit Review">
+    </div>   
   </div>
   </form>
-  </div>
     <table class="striped">
       <thead>
         <tr><th>Date</th><th>Made Before?</th><th>Name</th><th>Review</th><th>Rating</th></tr>
@@ -156,7 +168,7 @@
           <tr>
             <td>{{recipelog.date}}</td>
             <td>{{recipelog.recipe_use}}</td>
-            <td>{{recipelog.name}}</td>
+            <td>{{recipelog.review_name}}</td>
             <td>{{recipelog.review}}</td>
             <td>{{recipelog.get_rating_display}}</td>
           </tr>
@@ -185,6 +197,6 @@
         clear: 'fa fa-trash',
         close: 'fa fa-remove'
     }
-});
+}); 
 </script>
 {% endblock %}
