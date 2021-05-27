@@ -225,6 +225,7 @@ color: rgb(183, 180, 182);
    font-family:  'Julius Sans One', sans-serif;
    text-align: center;
    margin-top: 25px;
+   margin-bottom: 40px;
 }
 .details-body {
   font-size: 16px;
@@ -362,11 +363,3 @@ display: inline;
   text-align: center;
 }
 
-.review-table-body {
-  color:rgb(40, 39, 39);
-  margin-left: 50px;
-}
-
-.review-btn {
-  color: red;
-}

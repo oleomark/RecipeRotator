@@ -134,8 +134,25 @@
     {% endif %}
   </div>  
   <hr>
-  <div class="col s6">
   <h3 class="details-sub">How did the recipe turn out?</h3>
+    <table class="table">
+      <thead class="table-dark" style="background: rgb(93, 43, 75);">
+        <tr><th>Date</th><th>Name</th><th>Review Info</th><th>Rating No.</th></tr>
+      </thead>
+      <tbody>
+        {% for recipelog in recipe.recipelog_set.all %}
+          <tr>
+            <td>{{recipelog.date}}</td>
+            {% comment %} <td>{{recipelog.recipe_use}}</td> {% endcomment %}
+            <td>{{recipelog.review_name}}</td>
+            <td>{{recipelog.review}}</td>
+            <td>{{recipelog.get_rating_display}}</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  <div class="col s6">
+  <h3 class="details-sub">Create a New Review</h3>
   <form action="{% url 'add_recipelog' recipe.id %}" method="post">
     {% csrf_token %}
     <div class="input-group mb-3 review-form">
@@ -168,22 +185,6 @@
     </div>   
   </div>
   </form>
-    <table class="striped">
-      <thead>
-        <tr><th>Date</th><th>Made Before?</th><th>Name</th><th>Review</th><th>Rating</th></tr>
-      </thead>
-      <tbody>
-        {% for recipelog in recipe.recipelog_set.all %}
-          <tr>
-            <td>{{recipelog.date}}</td>
-            <td>{{recipelog.recipe_use}}</td>
-            <td>{{recipelog.review_name}}</td>
-            <td>{{recipelog.review}}</td>
-            <td>{{recipelog.get_rating_display}}</td>
-          </tr>
-        {% endfor %}
-      </tbody>
-    </table>
   </div>
 </div>
 <script>
