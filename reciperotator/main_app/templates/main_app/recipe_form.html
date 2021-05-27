@@ -48,4 +48,15 @@
     </div>
     <input type="submit" value="Submit!" class="btn edit-btn btn-outline-info">
   </form>
+  {% for photo in recipe.photo_set.all %} 
+  <img src="{{ photo.url }}">
+{% empty %} 
+  <div>No Photos Uploaded</div>
+{% endfor %} 
+<form action="{% url 'add_photo' recipe.id %}" enctype="multipart/form-data" method="POST">
+  {% csrf_token %} 
+  <input type="file" name="photo-file">
+  <br><br>
+  <input type="submit" class="btn" value="Upload Photo">
+</form>
 {% endblock %}
