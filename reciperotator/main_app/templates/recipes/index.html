@@ -8,7 +8,7 @@
 
     <div class="card index-card" style="width: 17rem;">
         {% for photo in recipe.photo_set.all %} 
-            <img src="{{ photo.url }}">
+            <img src="{{ photo.url }}" class="card-img-top">
         {% empty %} 
         <img
         src="https://imgur.com/ephVgQ7.jpeg"

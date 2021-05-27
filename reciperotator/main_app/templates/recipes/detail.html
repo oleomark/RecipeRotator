@@ -1,9 +1,17 @@
-
 {% extends 'base.html' %}
 {% block content %}
 
 <h1 class="edit-title">Featuring</h1>
   <h1 class="add-title">{{ recipe.name }}</h1>
+  {% for photo in recipe.photo_set.all %} 
+  <img src="{{ photo.url }}" class="card-img-top">
+{% empty %} 
+  <img
+        src="https://imgur.com/ephVgQ7.jpeg"
+        class="card-img-top"
+        alt="..."
+    />
+  {% endfor %} 
   <div class="accordion" style="margin-left: 25%; width: 40rem" id="accordionExample">
   <div class="accordion-item">
   <h2 class="accordion-header custom-accord" id="headingOne">
