@@ -10,8 +10,10 @@
 * Heroku
 
 ## Getting Started
-[Heroku](Heroku URL Here)
+[Heroku](https://reciperotators.herokuapp.com/)
+
 [Trello](https://trello.com/b/bXcygyBk/recipe-rotator)
+
 [Pitch Deck](https://docs.google.com/presentation/d/1yaGnhR7Rru__zi_1gcnK5lST5Lc_flURX9BcqzlhlXU/edit?usp=sharing)
 
 ## Next Steps (Icebox Features) 
