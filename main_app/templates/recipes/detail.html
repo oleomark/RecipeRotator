@@ -102,7 +102,9 @@
     Photo was <strong class="success-strong" style="color: rgb(74, 116, 74);">successfully</strong> uploaded!
   </div>
 {% empty %} 
-  <div>No Photos Uploaded</div>
+  <div class="alert alert-danger" style="width: 150px; text-align: center" role="alert">
+    Photo was <strong class="success-strong" style="color: #c13a28;">successfully</strong> uploaded!
+  </div>
 {% endfor %} 
   <div class="card-action changes-box">
     <form action="{% url 'add_photo' recipe.id %}" enctype="multipart/form-data" method="POST">
