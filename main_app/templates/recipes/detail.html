@@ -93,6 +93,19 @@
     <br>
     <a class="delete-link" href="{% url 'recipes_delete' recipe.id %}"> ✘ Delete</a>
   </div>
+{% for photo in recipe.photo_set.all %} 
+  <img src="{{ photo.url }}">
+{% empty %} 
+  <div>No Photos Uploaded</div>
+{% endfor %} 
+  <div class="card-action changes-box">
+    <form action="{% url 'add_photo' recipe.id %}" enctype="multipart/form-data" method="POST">
+    {% csrf_token %} 
+    <input type="file" name="photo-file">
+    <br><br>
+    <input type="submit" class="btn" value="Upload Photo">
+  </form>
+</div>
 </div>
 <hr>
 <div class="row">
