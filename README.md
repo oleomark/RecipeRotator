@@ -21,5 +21,6 @@
 * Update and Delete functions for photos
 * Improved UI functionality 
   * Only listing associated ingredients for recipes, rather than the entire list 
+  * Ability to view all recipes on the app, not just ones created by the user
 * Third-party API integration
   * Ability to bookmark and add recipes from other recipe resources 
