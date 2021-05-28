@@ -3,8 +3,6 @@
 import os
 import sys
 
-def some_function(request):
-    my_key = os.environ['SECRET_KEY']
 
 def main():
     """Run administrative tasks."""
