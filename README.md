@@ -2,8 +2,13 @@
 
 ## App in Use
 
-![Landing Page](/main_app/img/landingpage.png)
-![Sign Up]()
+![Landing Page](main_app/img/landingpage.png)
+![Sign Up](main_app/img/signup.png)
+![Log In](main_app/img/login.png)
+![Recipe Index](main_app/img/index.png)
+![Details Page Top](main_app/img/details1.png)
+![Details Page Bottom](main_app/img/details2.png)
+![Create Recipe](main_app/img/create.png)
 
 ## Technologies Used 
 
