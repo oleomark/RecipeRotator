@@ -6,7 +6,6 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.models import User
-import os
 import uuid
 import boto3
 from .models import Recipe, Ingredient, Photo
@@ -16,9 +15,6 @@ S3_BASE_URL = 'https://s3.us-west-1.amazonaws.com/'
 BUCKET = 'recipe-rotator'
 
 # Create your views here.
-
-def some_function(request):
-    my_key = os.environ['SECRET_KEY']
 
 class RecipeCreate(LoginRequiredMixin, CreateView):
     model = Recipe
