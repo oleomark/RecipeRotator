@@ -1,6 +1,6 @@
 # Recipe Rotator
 
-# Synopsis
+## Synopsis
 Have you ever had a long day at work and thinking about what to make for dinner is the last thing you want to stress about? Stress no more! With **Recipe Rotator**, you can store all of your favorite recipes in one convenient app and have it ready with an ingredient list for a quick and easy trip to the market. No more stressing about what to make or if you'll forget an item on your shopping list because you'll have it with you! 
 
 ## App in Use
