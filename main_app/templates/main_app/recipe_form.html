@@ -38,9 +38,8 @@
     <div class="input-group mb-3">
       <select type="text" class="form-control food-name-input" placeholder="Select Ingredients" aria-label="Select Ingredients"
         aria-describedby="basic-addon1" style="min-height: 175px;" {{form.ingredients}}
-          {% comment %} <option>Select Ingredients</option>
-          <option>{{form.ingredients}}</option> {% endcomment %}
-      </div>
+        <a class="addbtn" href="{% url 'ingredients_create' %}">Add More Ingredients</a>
+     </div>
     <div class="input-group mb-3">
     <select type="text" class="form-control food-name-input" placeholder="Select User" aria-label="Select User"
       aria-describedby="basic-addon1" {{form.user}}

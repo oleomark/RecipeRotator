@@ -481,3 +481,20 @@ button.ghost {
   background:rgba(58, 57, 58, 0.674);
 	transition: all 0.6s ease-in-out;
 }
+
+.addbtn {
+  display: block;
+  width: 250px;
+  height: 45px;
+  background:  #753E5E;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  line-height: 25px;
+}
+
+.addbtn:hover {
+  color:rgb(215, 194, 211);
+}
