@@ -1,14 +1,26 @@
-{% extends 'base.html' %}
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 {% block content %}
-
-<h1>Sign Up</h1>
-
-{% if error_message %}<p class="red-text">{{ error_message }}</p>{% endif %}
-
-<form method="post" action="{% url 'signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="signup">
-</form>
+<!------ Include the above in your HEAD tag ---------->
+<div class="login-container" style="margin-top: 10%; border: 2px solid #753e5e; height:775px;" id="container">
+	<form method="post" action="{% url 'signup' %}">
+	  <div class="form-container sign-in-container">
+			<h1 style="margin-bottom: 10px; margin-top: 80px;">Hello, newbie!</h1>
+			<span style="margin-bottom: 30px;">Get started logging your recipes today.</span>
+      {% csrf_token %}
+          {{ form.as_p }}
+			<button type="submit" class="login-btn">Sign Up</button>
+      <input type="hidden" name="next" value="{{ next }}"> 
+	  </div>
+	</form>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+          <img class="signup-img" src="https://imgur.com/lnhQZU3.jpg">
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}

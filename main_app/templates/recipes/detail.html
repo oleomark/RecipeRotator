@@ -5,13 +5,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 {% block content %}
 
-<h1 class="edit-title">Featuring
+<h1 class="edit-title">Let's Cook
   <strong class="detail-strong">{{ recipe.name}}</strong></h1>
   {% for photo in recipe.photo %} 
   <img class="detail-img" src="{{ photo.url }}" class="card-img-top">
 {% empty %} 
    <img
-        src="https://imgur.com/ephVgQ7.jpeg"
+        src="https://i.imgur.com/nh2P46i.jpg"
         class="card-img-top detail-img"
         alt="..."
     /> 
@@ -170,7 +170,6 @@
         {% for recipelog in recipe.recipelog_set.all %}
           <tr>
             <td>{{recipelog.date}}</td>
-            {% comment %} <td>{{recipelog.recipe_use}}</td> {% endcomment %}
             <td>{{recipelog.review_name}}</td>
             <td>{{recipelog.review}}</td>
             <td>{{recipelog.get_rating_display}}</td>
