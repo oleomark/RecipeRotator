@@ -1,22 +1,23 @@
 {% extends 'base.html' %}
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 {% block content %}
 
-<h1 class="edit-title">Featuring</h1>
-  <h1 class="add-title">{{ recipe.name }}</h1>
-  {% for photo in recipe.photo_set.all %} 
-  <img src="{{ photo.url }}" class="card-img-top">
+<h1 class="edit-title">Featuring
+  <strong class="detail-strong">{{ recipe.name}}</strong></h1>
+  {% for photo in recipe.photo %} 
+  <img class="detail-img" src="{{ photo.url }}" class="card-img-top">
 {% empty %} 
-  <img
+   <img
         src="https://imgur.com/ephVgQ7.jpeg"
-        class="card-img-top"
+        class="card-img-top detail-img"
         alt="..."
-    />
+    /> 
   {% endfor %} 
-  <div class="accordion" style="margin-left: 25%; width: 40rem" id="accordionExample">
+<div class="container-details">
+  <div class="accordion" style="margin-right: 65px; margin-left: 120px; width: 40rem" id="accordionExample">
   <div class="accordion-item">
   <h2 class="accordion-header custom-accord" id="headingOne">
      <button
@@ -96,24 +97,28 @@
     <a class="edit-link" href="{% url 'recipes_update' recipe.id %}">✎ Edit</a>
     <br>
     <a class="delete-link" href="{% url 'recipes_delete' recipe.id %}"> ✘ Delete</a>
-  </div>
 {% for photo in recipe.photo_set.all %} 
-  <div class="alert alert-success" style="width: 150px; text-align: center" role="alert">
+  {% comment %} <div class="alert alert-success" style="width: 150px; text-align: center" role="alert">
     Photo was <strong class="success-strong" style="color: rgb(74, 116, 74);">successfully</strong> uploaded!
-  </div>
+  </div> {% endcomment %}
 {% empty %} 
-  <div class="alert alert-danger" style="width: 150px; text-align: center" role="alert">
+  {% comment %} <div class="alert alert-danger" style="width: 150px; text-align: center" role="alert">
     Photo was <strong class="success-strong" style="color: #c13a28;">successfully</strong> uploaded!
-  </div>
+  </div> {% endcomment %}
 {% endfor %} 
-  <div class="card-action changes-box">
+  {% comment %} <div class="card-action changes-box"> {% endcomment %}
     <form action="{% url 'add_photo' recipe.id %}" enctype="multipart/form-data" method="POST">
     {% csrf_token %} 
-    <input type="file" name="photo-file">
+      <div class="custom-file">
+       <label class="form-label" style="margin-top: 30px;" for="customFile">Upload Recipe Photo</label>
+       <input type="file" style="width: 255px; display: margin-top: 20px; inline-block;" class="form-control upload-input" id="customFile" name="photo-file"/>
+      <input type="submit" class="btn btn-secondary photo-btn" value="Upload Photo">
+      </div>
     <br><br>
-    <input type="submit" class="btn" value="Upload Photo">
   </form>
-</div>
+  </div>
+{% comment %} </div> {% endcomment %}
+  </div>
 </div>
 <hr>
 <div class="row">
@@ -136,16 +141,17 @@
       <h5>No ingredients have been added.</h5>
     {% endif %}
     <h3 class="details-sub">Recently Used</h3>
+    <div class="row">
     <div class="col s6">
       {% if ingredients.count %}
       {% for ingredient in ingredients.all %}
       <form action="{% url 'assoc_ingredient' recipe.id ingredient.id %}" method="post">
-        <div class="chip ml-0 mr-0 chip-custom">
            {% csrf_token %}
-            <span><strong class="ingredient-att">{{ ingredient.ingred_name }}</strong></span>
-                <button type="submit" class="chip-btn">
-              + </button>
-          </div> 
+          {% comment %} <div class="recent-cards" style="max-width: 8rem; text-align:center; display:grid;"> {% endcomment %}
+          <div>
+            <li class="card-header col-ingred" style="color: #753E5E; margin-right: 50px; max-width: 18rem;">{{ ingredient.ingred_name }}
+            <button  type="submit" style="border: 2px solid #5D2B4B; color:#373737;" class="card-titlechip-btn btn-outline-secondary ingredbtn">Add + </button></li>
+          </div>
       </form>
       </div>
   </div>
@@ -190,7 +196,7 @@
       <textarea class=" review-input" name="review"  aria-label="Review the Recipe"
        placeholder="The recipe review goes right here. Remember, practice makes perfect! Provide feedback for yourself." {{recipelogform.review}}></textarea>
     
-      <select type="text" {{recipelog_form.rating}}
+      <select type="text" class="rating-select" {{recipelog_form.rating}}
     </div>
     <div class="form-check checkbox review-form">
     <input
@@ -202,7 +208,7 @@
       <label class="form-check-label" for="flexCheckDefault">
           I have made this recipe.
       </label> 
-    <button type="submit" class="btn review-btn" value="Submit Review">
+    <button type="submit" class="btn btn-outline-secondary review-btn" value="Submit Review">Submit</button>
     </div>   
   </div>
   </form>

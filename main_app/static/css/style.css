@@ -208,6 +208,15 @@ span {
   text-align: center;
   font-family: 'Trocchi', serif;
 }
+
+.detail-strong {
+  color: rgb(123, 43, 94);
+  font-size: 36px;
+  margin-top: 35px;
+  margin-bottom: 65px;
+  text-align: center;
+  font-family: 'Elsie', cursive;
+}
 /* .card {
 background-color: #753E5E;
 margin-top: 5px;
@@ -281,7 +290,7 @@ display: inline;
   border-radius: 10px;
   color:rgb(210, 210, 207);
   border: 4px solid #6a3d58;
-  margin-top: 10px;
+  margin-top: 40px;
 }
 
 .custom-accord {
@@ -291,22 +300,31 @@ display: inline;
 .custom-accord:active {
   color:#CEC0CA;
 }
+.detail-img {
+ text-align: center;
+ width: 900;
+ height: 420px;
 
+}
+.container-details {
+  display: flex;
+}
 .collapse-text {
   color:#ae9ba9;
 }
 .changes-box {
-  background-color:#765769;
-  width: 175px;
+  background-color:#ebebe6;
+  width: 285px;
+  margin-top: 40px;
   padding: 10px;
   text-align:center;
   border-radius: 15px;
-  border: 4px solid #393838;
+  border: 2px solid #393838;
 }
 
 .change-box-tit {
   font-family: 'Kaushan Script', cursive;
-  color: rgb(223, 214, 223);
+  color: rgb(96, 56, 96);
 }
 
 .edit-link, .delete-link  {
@@ -315,10 +333,16 @@ display: inline;
 }
 
 .edit-link:hover {
-  color: white;
+  color: rgb(66, 119, 132);
 }
 .delete-link:hover {
   color: rgb(150, 27, 27);
+}
+.photo-btn {
+  margin-top: 40px;
+  color:rgb(196, 175, 190);
+  background:rgb(58, 57, 58) !important;
+  padding: 15px !important;
 }
 .review-form {
   margin-top: 50px;
@@ -354,6 +378,19 @@ display: inline;
   margin-right: 30px;
 }
 
+.review-btn {
+  color:rgb(227, 195, 218) !important;
+  margin-left: 60px !important;
+  background:rgb(60, 59, 60) !important;
+  width: 120px;
+  border: 3px solid rgb(104, 36, 85);
+}
+
+.review-btn:hover {
+color:rgb(60, 59, 60);
+background: rgb(227, 195, 218);
+border: 3px solid rgb(104, 36, 85);
+}
 
 .review-form, option {
   color: white;
@@ -362,6 +399,24 @@ display: inline;
   color:rgb(101, 41, 79);
   text-align: center;
 }
-.success-div {
-width: 180px;
+
+.recent-cards {
+  display: grid;
+}
+
+.col-ingred {
+  margin-left: 25%;
+  margin-top: 35px;
+  display: flex;
+  list-style: none;
+}
+
+.ingredbtn {
+  margin-left: 50px;
+  float: right;
+}
+
+.rating-select {
+  width: 115px;
+  height: 30px;
 }
