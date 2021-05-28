@@ -14,6 +14,7 @@
       aria-describedby="basic-addon1" {{form.name}}
 
       <span class="input-group-text material-icons food-name-icon" id="basic-addon1">public</span>
+  
       <select type="text" class="form-control food-name-input" placeholder="Select Cuisine" aria-label="Select Cuisine"
       aria-describedby="basic-addon1" {{form.cuisine}}
         {% comment %} <option>Select Cuisine</option>
@@ -36,10 +37,9 @@
     </div>
     <div class="input-group mb-3">
       <select type="text" class="form-control food-name-input" placeholder="Select Ingredients" aria-label="Select Ingredients"
-        aria-describedby="basic-addon1" {{form.ingredients}}
-          {% comment %} <option>Select Ingredients</option>
-          <option>{{form.ingredients}}</option> {% endcomment %}
-      </div>
+        aria-describedby="basic-addon1" style="min-height: 175px;" {{form.ingredients}}
+        <a class="addbtn" href="{% url 'ingredients_create' %}">Add More Ingredients</a>
+     </div>
     <div class="input-group mb-3">
     <select type="text" class="form-control food-name-input" placeholder="Select User" aria-label="Select User"
       aria-describedby="basic-addon1" {{form.user}}
