@@ -362,4 +362,6 @@ display: inline;
   color:rgb(101, 41, 79);
   text-align: center;
 }
-
+.success-div {
+width: 180px;
+}
