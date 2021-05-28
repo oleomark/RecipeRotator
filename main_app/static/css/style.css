@@ -131,18 +131,18 @@ span {
   margin-top: 30px;
   color:#753e5e !important;
    font-size: 23px;
-   height: 50px;
+   height: 35px;
 }
  .food-name-icon {
    color:#753e5e !important;
    font-size: 23px;
-   height: 50px;
+   height: 42px;
  }
  .author-name-icon {
     margin-top: 30px;
     color:#753e5e !important;
    font-size: 23px;
-   height: 50px;
+   height: 35px;
  }
 .directions-icon  {
   color:#753e5e !important;
@@ -153,13 +153,13 @@ span {
 .serving-icon {
   color:#753e5e !important;
    font-size: 23px;
-   height: 60px;
+   height: 45px;
 }
  .food-name-input {
-   height: 50px !important;
+   height: 42px !important;
    max-width: 320px !important;
-     margin-right: 30px;
-     margin-bottom: 30px;
+  margin-right: 30px;
+  margin-bottom: 30px;
  }
 .directions-input {
   min-height: 90px !important;
@@ -392,9 +392,9 @@ background: rgb(227, 195, 218);
 border: 3px solid rgb(104, 36, 85);
 }
 
-.review-form, option {
+/* .review-form, option {
   color: white;
-}
+} */
 .review-table-sub {
   color:rgb(101, 41, 79);
   text-align: center;
