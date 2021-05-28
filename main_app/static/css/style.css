@@ -2,6 +2,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    color: rgb(62, 61, 61);
     /* background-color: rgb(237, 237, 229); */
     /* display: flexbox;
     flex-direction: row-reverse; */
@@ -436,10 +437,10 @@ border: 3px solid rgb(104, 36, 85);
 	text-transform: uppercase;
 	transition: transform 80ms ease-in;
 }
-
-button:active {
+/* 
+/* button:active {
 	transform: scale(0.95);
-}
+} */ */
 
 button:focus {
 	outline: none;
@@ -497,4 +498,8 @@ button.ghost {
 
 .addbtn:hover {
   color:rgb(215, 194, 211);
+}
+
+.newingredbtn {
+  padding: 20px;
 }
