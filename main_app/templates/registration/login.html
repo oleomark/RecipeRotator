@@ -1,13 +1,30 @@
-{% extends 'base.html' %}
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+{% load static %} 
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 {% block content %}
-
-<h1>Log In</h1>
-
-<form method="post" action="{% url 'login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" class="btn" value="login">
-  <input type="hidden" name="next" value="{{ next }}">
-</form>
+<!------ Include the above in your HEAD tag ---------->
+<div class="login-container" style="margin-top: 10%; border: 2px solid #753e5e;" id="container">
+	<form method="post" action="{% url 'login' %}">
+	  <div class="form-container sign-in-container">
+			<h1 style="margin-bottom: 10px; margin-top: 80px;">Welcome, Chef!</h1>
+			<span style="margin-bottom: 30px;">Sign in to start cooking.</span>
+      {% csrf_token %}
+          {{ form.as_p }}
+			{% comment %} <input type="username" name="user" placeholder="Username" {{form.superuser}}
+      <br>
+			<input type="password" placeholder="Password" {{form.password}}
+      <br>
+      <input type="hidden" name="next" value="{{ next }}"> {% endcomment %}
+			<button type="submit" class="login-btn">Sign In</button>
+	  </div>
+	</form>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-right">
+          <img class="login-img" src="https://imgur.com/TUqZLlH.jpg">
+			</div>
+		</div>
+	</div>
+</div>
 
 {% endblock %}
